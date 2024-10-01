@@ -1,6 +1,7 @@
 package grafc;
 
 import java.awt.Color;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
@@ -16,25 +17,42 @@ import javax.swing.JTextField;
 
 public class AtividadeWindow extends JFrame {
 	
-	private JTextField txfValorA;
-	private JTextField txfValorA2;
-	private JTextField txfValorB;
-	private JTextField txfResultado;
-	private JTextField txfResultado2;
-	private JButton btnResultado;
 	
+	// DESCONTO
+	private JPanel pnl1;
 	private JLabel lblValorA;
 	private JLabel lblValorB;
 	private JLabel lblValorResultado;
-	private JLabel lblValorResultado2;
+	private JTextField txfValorA;
+	private JTextField txfValorB;
+	private JTextField txfResultado;
+	private JButton btnResultado;
+	
+	//
+	
+	// INCREMENTAR
+	private JPanel pnlincrementar;
+	private JLabel lblValorAIncrementar;
+	private JLabel lblValorBIncrementar;
+	private JLabel lblValorResultadoIncrementar;
+	private JTextField txfValorAIncrementar;
+	private JTextField txfValorBIncrementar;
+	private JTextField txfResultadoIncrementar;
+	private JButton btnResultadoIncrementar;
+	
+	//
 
+	// TERCEIRO PEDRO
+	private JPanel pnl3;
+	private JLabel lblValorA3;
+	private JLabel lblValorB3;
+	private JLabel lblValorResultado3;
+	private JTextField txfValorA3;
+	private JTextField txfValorB3;
+	private JTextField txfResultado3;
+	private JButton btnResultado3;
 
 	
-	private JLabel lblValorB2;
-	private JLabel lblValorA2;
-	
-	private JPanel pnl1;
-	private JPanel pnl2;
 	
 	public AtividadeWindow() {
 		setSize(1850,700);
@@ -133,20 +151,20 @@ public class AtividadeWindow extends JFrame {
 	
 	private void acrecimoPercent() {
 		
-		pnl2 = new JPanel();
-		pnl2.setLayout(null);
-		pnl2.setBounds(345, 10, 330, 200);
-		pnl2.setBorder(BorderFactory.createTitledBorder("Incrementar Percentual"));
+		pnlincrementar = new JPanel();
+		pnlincrementar.setLayout(null);
+		pnlincrementar.setBounds(345, 10, 330, 200);
+		pnlincrementar.setBorder(BorderFactory.createTitledBorder("Incrementar Percentual"));
 		
-			lblValorA2 = new JLabel("Valor Inicial R$(a):");
-			lblValorA2.setForeground(Color.red);
-		    lblValorA2.setBounds(10, 20, 200, 35);
-			pnl2.add(lblValorA2);
+			lblValorAIncrementar = new JLabel("Valor Inicial R$(a):");
+			lblValorAIncrementar.setForeground(Color.red);
+		    lblValorAIncrementar.setBounds(10, 20, 200, 35);
+			pnlincrementar.add(lblValorAIncrementar);
 			
 			
-			txfValorA2 = new JTextField();
-			txfValorA2.setBounds(117, 20, 200, 35);
-			txfValorA2.addKeyListener(new KeyListener() {
+			txfValorAIncrementar = new JTextField();
+			txfValorAIncrementar.setBounds(117, 20, 200, 35);
+			txfValorAIncrementar.addKeyListener(new KeyListener() {
 				
 				@Override
 				public void keyTyped(KeyEvent e) {
@@ -161,81 +179,81 @@ public class AtividadeWindow extends JFrame {
 				@Override
 				public void keyPressed(KeyEvent e) {
 					if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-						txfValorB.requestFocus();	
+						txfValorBIncrementar.requestFocus();	
 					}				
 				}
 			});
-			pnl2.add(txfValorA2);
+			pnlincrementar.add(txfValorAIncrementar);
 			
-			lblValorB2 = new JLabel("Incrementar %:");
-			lblValorB2.setForeground(Color.black);
-		    lblValorB2.setBounds(27, 60, 200, 35);
-			pnl2.add(lblValorB2);
+			lblValorBIncrementar = new JLabel("Incrementar %:");
+			lblValorBIncrementar.setForeground(Color.black);
+		    lblValorBIncrementar.setBounds(27, 60, 200, 35);
+			pnlincrementar.add(lblValorBIncrementar);
 
-			txfValorB = new JTextField();
-			txfValorB.setBounds(117, 60, 200, 35);
-			txfValorB.addKeyListener(new KeyAdapter() {
+			txfValorBIncrementar = new JTextField();
+			txfValorBIncrementar.setBounds(117, 60, 200, 35);
+			txfValorBIncrementar.addKeyListener(new KeyAdapter() {
 				@Override
 				public void keyPressed(KeyEvent e) {
 					if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-						btnResultado.doClick();
+						btnResultadoIncrementar.doClick();
 					}
 				}
 			});
-			pnl2.add(txfValorB);
+			pnlincrementar.add(txfValorBIncrementar);
 			
-			lblValorResultado2 = new JLabel("Resultado:");
-			lblValorResultado2.setForeground(Color.black);
-		    lblValorResultado2.setBounds(55, 100, 200, 35);
-			pnl2.add(lblValorResultado2);
+			lblValorResultadoIncrementar = new JLabel("Resultado:");
+			lblValorResultadoIncrementar.setForeground(Color.black);
+		    lblValorResultadoIncrementar.setBounds(55, 100, 200, 35);
+			pnlincrementar.add(lblValorResultadoIncrementar);
 
 			
-			txfResultado2 = new JTextField();
-			txfResultado2.setBounds(117, 100, 200, 35);
-			pnl2.add(txfResultado2);
+			txfResultadoIncrementar = new JTextField();
+			txfResultadoIncrementar.setBounds(117, 100, 200, 35);
+			pnlincrementar.add(txfResultadoIncrementar);
 			
-			btnResultado = new JButton(new AbstractAction("CALCULAR") {
+			btnResultadoIncrementar = new JButton(new AbstractAction("CALCULAR") {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					double a = Double.parseDouble(txfValorA2.getText());
-					double b = Double.parseDouble(txfValorB.getText());
+					double a = Double.parseDouble(txfValorAIncrementar.getText());
+					double b = Double.parseDouble(txfValorBIncrementar.getText());
 					
 					double resultado = calculusMatematicus.acrementar(a, b);
-					txfResultado2.setText(""+resultado);
+					txfResultadoIncrementar.setText(""+resultado);
 					
 				}
 			});
 			
-		    JLabel lblValorResult2 = new JLabel("Resultado:");
-		    lblValorResult2.setBounds(10, 90, 200, 35);
-		    getContentPane().add(lblValorResult2);
+		    JLabel lblValorResultIncrementar = new JLabel("Resultado:");
+		    lblValorResultIncrementar.setBounds(10, 90, 200, 35);
+		    getContentPane().add(lblValorResultIncrementar);
 
-			btnResultado.setBounds(115, 140, 100, 35);
-			pnl2.add(btnResultado);
+			btnResultadoIncrementar.setBounds(115, 140, 100, 35);
+			pnlincrementar.add(btnResultadoIncrementar);
 		
-		getContentPane().add(pnl2);		
+		getContentPane().add(pnlincrementar);		
 	}
 	
 	//MEU TERCEIRO PEDRO
 	
 	private void terceiroPedro() {
 		
-		pnl2 = new JPanel();
-		pnl2.setLayout(null);
-		pnl2.setBounds(680, 10, 330, 200);
-		pnl2.setBorder(BorderFactory.createTitledBorder("TERCEIRO PROGRAMA PEDRO 3"));
+		pnl3 = new JPanel();
+		pnl3.setLayout(null);
+		pnl3.setBounds(680, 10, 330, 200);
+		pnl3.setBorder(BorderFactory.createTitledBorder("TERCEIRO PROGRAMA PEDRO 3"));
 		
-			lblValorA2 = new JLabel("Valor Inicial R$(a):");
-			lblValorA2.setForeground(Color.red);
-		    lblValorA2.setBounds(10, 20, 200, 35);
-			pnl2.add(lblValorA2);
+			lblValorA3 = new JLabel("Valor Inicial R$(a):");
+			lblValorA3.setForeground(Color.red);
+		    lblValorA3.setBounds(10, 20, 200, 35);
+			pnl3.add(lblValorA3);
 			
 			
-			txfValorA2 = new JTextField();
-			txfValorA2.setBounds(117, 20, 200, 35);
-			txfValorA2.addKeyListener(new KeyListener() {
+			txfValorA3 = new JTextField();
+			txfValorA3.setBounds(117, 20, 200, 35);
+			txfValorA3.addKeyListener(new KeyListener() {
 				
 				@Override
 				public void keyTyped(KeyEvent e) {
@@ -250,20 +268,20 @@ public class AtividadeWindow extends JFrame {
 				@Override
 				public void keyPressed(KeyEvent e) {
 					if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-						txfValorB.requestFocus();	
+						txfValorB3.requestFocus();	
 					}				
 				}
 			});
-			pnl2.add(txfValorA2);
+			pnl3.add(txfValorA3);
 			
-			lblValorB2 = new JLabel("Incrementar %:");
-			lblValorB2.setForeground(Color.black);
-		    lblValorB2.setBounds(27, 60, 200, 35);
-			pnl2.add(lblValorB2);
+			lblValorB3 = new JLabel("Incrementar %:");
+			lblValorB3.setForeground(Color.black);
+		    lblValorB3.setBounds(27, 60, 200, 35);
+			pnl3.add(lblValorB3);
 
-			txfValorB = new JTextField();
-			txfValorB.setBounds(117, 60, 200, 35);
-			txfValorB.addKeyListener(new KeyAdapter() {
+			txfValorB3 = new JTextField();
+			txfValorB3.setBounds(117, 60, 200, 35);
+			txfValorB3.addKeyListener(new KeyAdapter() {
 				@Override
 				public void keyPressed(KeyEvent e) {
 					if (e.getKeyCode() == KeyEvent.VK_ENTER) {
@@ -271,40 +289,40 @@ public class AtividadeWindow extends JFrame {
 					}
 				}
 			});
-			pnl2.add(txfValorB);
+			pnl3.add(txfValorB3);
 			
-			lblValorResultado2 = new JLabel("Resultado:");
-			lblValorResultado2.setForeground(Color.black);
-		    lblValorResultado2.setBounds(55, 100, 200, 35);
-			pnl2.add(lblValorResultado2);
+			lblValorResultado3 = new JLabel("Resultado:");
+			lblValorResultado3.setForeground(Color.black);
+			lblValorResultado3.setBounds(55, 100, 200, 35);
+			pnl3.add(lblValorResultado3);
 
 			
-			txfResultado2 = new JTextField();
-			txfResultado2.setBounds(117, 100, 200, 35);
-			pnl2.add(txfResultado2);
+			txfResultado3 = new JTextField();
+			txfResultado3.setBounds(117, 100, 200, 35);
+			pnl3.add(txfResultado3);
 			
-			btnResultado = new JButton(new AbstractAction("CALCULAR") {
+			btnResultado3 = new JButton(new AbstractAction("CALCULAR") {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
 					
-					double a = Double.parseDouble(txfValorA2.getText());
-					double b = Double.parseDouble(txfValorB.getText());
+					double a = Double.parseDouble(txfValorA3.getText());
+					double b = Double.parseDouble(txfValorB3.getText());
 					
 					double resultado = calculusMatematicus.acrementar(a, b);
-					txfResultado2.setText(""+resultado);
+					txfResultado3.setText(""+resultado);
 					
 				}
 			});
 			
-		    JLabel lblValorResult2 = new JLabel("Resultado:");
-		    lblValorResult2.setBounds(10, 90, 200, 35);
-		    getContentPane().add(lblValorResult2);
+		    JLabel lblValorResultado3 = new JLabel("Resultado:");
+		    lblValorResultado3.setBounds(10, 90, 200, 35);
+		    getContentPane().add(lblValorResultado3);
 
-			btnResultado.setBounds(115, 140, 100, 35);
-			pnl2.add(btnResultado);
+		    btnResultado3.setBounds(115, 140, 100, 35);
+			pnl3.add(btnResultado3);
 		
-		getContentPane().add(pnl2);		
+		getContentPane().add(pnl3);		
 	}
 	
 	//
