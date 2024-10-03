@@ -1,13 +1,14 @@
 package grafc;
 
+import java.util.Random;
+
 public class calculusMatematicus {
 
 	public static double soma(double a, double b) {
 		
 		return a - (a * (b/100));
 	}
-	
-	
+
 	public static double acrementar(double a, double b) {
 		
 		return a + (a * (b/100));
@@ -36,9 +37,38 @@ public class calculusMatematicus {
 
 		return (r1*b)/a;
 	}
-	public static double gerarsenha(double a, double b) {
+	public static String gerarsenha(int a, boolean maiu, boolean minu, boolean simb, boolean nume) {
 
-		return (b)/a;
+		String letrasmau = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+		String letrasminu = "abcdefghijklmnopqrstuvwxyz";
+		String numero = "0123456789";
+		String simbulo = "!@#$%^&*_+-=<>?";
+
+		StringBuilder caracteresPermitidos = new StringBuilder();
+
+		if (maiu) {
+			caracteresPermitidos.append(letrasmau);
+		}
+		if (minu) {
+			caracteresPermitidos.append(letrasminu);
+		}
+		if (simb) {
+			caracteresPermitidos.append(simbulo);
+		}
+		if (nume) {
+			caracteresPermitidos.append(numero);
+		}
+
+		StringBuilder stringAleatoria = new StringBuilder(a);
+		Random random = new Random();
+
+		for (int i = 0; i < a; i++) {
+			int indiceAleatorio = random.nextInt(caracteresPermitidos.length());
+			char caractereAleatorio = caracteresPermitidos.charAt(indiceAleatorio);
+			stringAleatoria.append(caractereAleatorio);
+		}
+
+		return stringAleatoria.toString();
 	}
 
 

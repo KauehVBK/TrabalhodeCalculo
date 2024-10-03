@@ -137,6 +137,7 @@ public class AtividadeWindow extends JFrame {
 		terceirokaueh();
 		quartokaueh();
 		quintokaueh();
+		setimokaueh();
 		setVisible(true);
 
 	}
@@ -877,123 +878,89 @@ public class AtividadeWindow extends JFrame {
 		getContentPane().add(pnl8);
 	}
 	//setimokaueh
-/*
+
 	private void setimokaueh() {
 
 		pnl9 = new JPanel();
 		pnl9.setLayout(null);
-		pnl9.setBounds(1015, 210, 330, 200);
-		pnl9.setBorder(BorderFactory.createTitledBorder("Regra de 3"));
+		pnl9.setBounds(520, 410, 330, 200);
+		pnl9.setBorder(BorderFactory.createTitledBorder("Gerador de senhas"));
 
-		lblValorA9 = new JLabel("A:");
-		lblValorA9.setForeground(Color.red);
-		lblValorA9.setBounds(5, 20, 200, 35);
-		pnl9.add(lblValorA8);
+		cbMa = new JCheckBox();
+		cbMa.setBounds(10,30,20,15);
+		pnl9.add(cbMa);
 
+		cbMi = new JCheckBox();
+		cbMi.setBounds(110,30,20,15);
+		pnl9.add(cbMi);
 
-		txfValorA9 = new JTextField();
-		txfValorA9.setBounds(20, 20, 135, 35);
-		txfValorA9.addKeyListener(new KeyListener() {
+		cbNu = new JCheckBox();
+		cbNu.setBounds(10,59,20,15);
+		pnl9.add(cbNu);
 
-			@Override
-			public void keyTyped(KeyEvent e) {
-
-			}
-
-			@Override
-			public void keyReleased(KeyEvent e) {
-
-			}
-
-			@Override
-			public void keyPressed(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					txfValorR1.requestFocus();
-				}
-			}
-		});
-		pnl9.add(txfValorA9);
-
-		lblValorB9 = new JLabel("B:");
-		lblValorB9.setForeground(Color.black);
-		lblValorB9.setBounds(5, 60, 200, 35);
-		pnl8.add(lblValorB8);
-
-		txfValorB9 = new JTextField();
-		txfValorB9.setBounds(20, 60, 135, 35);
-		txfValorB9.addKeyListener(new KeyAdapter() {
-			@Override
-			public void keyPressed(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					btnResultado9.doClick();
-				}
-			}
-		});
-		pnl9.add(txfValorB9);
-
-		lblValorResultado9 = new JLabel("R2:");
-		lblValorResultado9.setForeground(Color.GRAY);
-		lblValorResultado9.setBounds(165, 60, 135, 35);
-		pnl9.add(lblValorResultado9);
-
-		lblValorR1 = new JLabel("R1:");
-		lblValorR1.setForeground(Color.GREEN);
-		lblValorR1.setBounds(165, 20, 135, 35);
-		pnl9.add(lblValorR1);
-
-		txfValorR1= new JTextField();
-		txfValorR1.setBounds(185, 20, 135, 35);
-		pnl9.add(txfValorR1);
-		txfValorR1.addKeyListener(new KeyListener() {
-
-			@Override
-			public void keyTyped(KeyEvent e) {
-
-			}
-
-			@Override
-			public void keyReleased(KeyEvent e) {
-
-			}
-
-			@Override
-			public void keyPressed(KeyEvent e) {
-				if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-					txfValorB8.requestFocus();
-				}
-			}
-		});
+		cbSim = new JCheckBox();
+		cbSim.setBounds(110,59,20,15);
+		pnl9.add(cbSim);
 
 
-		txfResultado9 = new JTextField();
-		txfResultado9.setBounds(185, 60, 135, 35);
-		txfResultado9.setEditable(false);
-		pnl9.add(txfResultado9);
+		lblMaiuscula9 = new JLabel("Maiúsculas");
+		lblMaiuscula9.setBounds(30, 20, 200, 35);
+		pnl9.add(lblMaiuscula9);
+
+		lblMinuscula9 = new JLabel("Minusculas");
+		lblMinuscula9.setBounds(130, 20, 200, 35);
+		pnl9.add(lblMinuscula9);
+
+		lblNumeros9 = new JLabel("Números");
+		lblNumeros9.setBounds(30, 50, 200, 35);
+		pnl9.add(lblNumeros9);
+
+		lblSimbulos9 = new JLabel("Símbulos");
+		lblSimbulos9.setBounds(130, 50, 200, 35);
+		pnl9.add(lblSimbulos9);
+
+		lblTamanho9 = new JLabel("Tamanho");
+		lblTamanho9.setBounds(15, 95, 200, 35);
+		pnl9.add(lblTamanho9);
+
+		spiTamanhi = new JSpinner();
+		spiTamanhi.setBounds(75, 100, 80, 25);
+		pnl9.add(spiTamanhi);
+
 
 		btnResultado9 = new JButton(new AbstractAction("CALCULAR") {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				double a = Double.parseDouble(txfValorA8.getText());
-				double b = Double.parseDouble(txfValorB8.getText());
-				double r1 = Double.parseDouble(txfValorR1.getText());
-				double resultado = calculusMatematicus.gerarsenha(a, b);
+				int a = (Integer) spiTamanhi.getValue();
+
+				boolean maiu = cbMa.isSelected();
+				boolean minu = cbMi.isSelected();
+				boolean nume = cbNu.isSelected();
+				boolean simb = cbSim.isSelected();
+
+				String resultado = calculusMatematicus.gerarsenha(a,maiu,minu,simb,nume);
+
 				txfResultado9.setText(""+resultado);
 
 			}
 		});
 
-		JLabel lblValorResultado9 = new JLabel("Resultado:");
+		JLabel lblValorResultado9 = new JLabel("Gerar:");
 		lblValorResultado9.setBounds(10, 90, 200, 35);
 		getContentPane().add(lblValorResultado9);
 
-		btnResultado9.setBounds(20, 110, 100, 35);
+		btnResultado9.setBounds(210, 96, 100, 30);
 		pnl9.add(btnResultado9);
+
+		txfResultado9 = new JTextField();
+		txfResultado9.setBounds(15, 150, 280, 30);
+		pnl9.add(txfResultado9);
 
 		getContentPane().add(pnl9);
 	}
-*/
+
 	public static void main(String[] args) {
 		new AtividadeWindow();
 	}
