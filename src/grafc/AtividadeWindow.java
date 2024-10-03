@@ -8,184 +8,75 @@ import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
+import javax.swing.text.AttributeSet;
+import javax.swing.text.BadLocationException;
+import javax.swing.text.DocumentFilter;
 
-public class AtividadeWindow extends JFrame {
-	
-	
-	// DESCONTO
-	private JPanel pnl1;
-	private JLabel lblValorA;
-	private JLabel lblValorB;
-	private JLabel lblValorResultado;
-	private JTextField txfValorA;
-	private JTextField txfValorB;
-	private JTextField txfResultado;
-	private JButton btnResultado;
-	
-	//
-	
-	// INCREMENTAR
-	private JPanel pnlincrementar;
-	private JLabel lblValorAIncrementar;
-	private JLabel lblValorBIncrementar;
-	private JLabel lblValorResultadoIncrementar;
-	private JTextField txfValorAIncrementar;
-	private JTextField txfValorBIncrementar;
-	private JTextField txfResultadoIncrementar;
-	private JButton btnResultadoIncrementar;
-	
-	//
+public class AtividadeWindow extends JanelaBase {
 
-	// TERCEIRO PEDRO
-	private JPanel pnl3;
-	private JLabel lblValorA3;
-	private JLabel lblValorB3;
-	private JLabel lblValorResultado3;
-	private JTextField txfValorA3;
-	private JTextField txfValorB3;
-	private JTextField txfResultado3;
-	private JButton btnResultado3;
+		public AtividadeWindow() {
+			super();
 
-	//kaueh1
-	private JPanel pnl4;
-	private JLabel lblValorA4;
-	private JLabel lblValorB4;
-	private JLabel lblValorResultado4;
-	private JTextField txfValorA4;
-	private JTextField txfValorB4;
-	private JTextField txfResultado4;
-	private JButton btnResultado4;
+			componentesCriar();
+			acrecimoPercent();
+			terceiroPedro();
+			primeirokaueh();
+			segundokaueh();
+			terceirokaueh();
+			quartokaueh();
+			quintokaueh();
+			setimokaueh();
 
-	//kaueh2
-	private JPanel pnl5;
-	private JLabel lblValorA5;
-	private JLabel lblValorB5;
-	private JLabel lblValorResultado5;
-	private JTextField txfValorA5;
-	private JTextField txfValorB5;
-	private JTextField txfResultado5;
-	private JButton btnResultado5;
+			setVisible(true);
+		}
 
-	//kaueh3
-	private JPanel pnl6;
-	private JLabel lblValorA6;
-	private JLabel lblValorB6;
-	private JLabel lblValorResultado6;
-	private JTextField txfValorA6;
-	private JTextField txfValorB6;
-	private JTextField txfResultado6;
-	private JButton btnResultado6;
-
-	//kaueh4
-	private JPanel pnl7;
-	private JLabel lblValorA7;
-	private JLabel lblValorB7;
-	private JLabel lblValorResultado7;
-	private JTextField txfValorA7;
-	private JTextField txfValorB7;
-	private JTextField txfResultado7;
-	private JButton btnResultado7;
-
-	//kaueh5
-	private JPanel pnl8;
-	private JLabel lblValorA8;
-	private JLabel lblValorB8;
-	private JLabel lblValorResultado8;
-	private JLabel lblValorR1;
-	private JTextField txfValorA8;
-	private JTextField txfValorB8;
-	private JTextField txfValorR1;
-	private JTextField txfResultado8;
-	private JButton btnResultado8;
-
-	//kaueh6
-	private JPanel pnl9;
-	private JLabel lblMaiuscula9;
-	private JLabel lblMinuscula9;
-	private JLabel lblNumeros9;
-	private JLabel lblSimbulos9;
-	private JLabel lblTamanho9;
-	private JLabel lblGerar9;
-
-	private JCheckBox cbMa;
-	private JCheckBox cbMi;
-	private JCheckBox cbNu;
-	private JCheckBox cbSim;
-
-	private JSpinner spiTamanhi;
-
-	private JTextField txfValorA9;
-	private JTextField txfValorB9;
-
-	private JTextField txfResultado9;
-	private JButton btnResultado9;
-
-
-
-
-	public AtividadeWindow() {
-		setSize(1370,710);
-		setTitle("Trabalho I -> Cálculos Matemáticos");
-		setDefaultCloseOperation(EXIT_ON_CLOSE);
-		setLayout(null);
-		setResizable(false);
-		componentesCriar();
-		acrecimoPercent();
-		terceiroPedro();
-		primeirokaueh();
-		segundokaueh();
-		terceirokaueh();
-		quartokaueh();
-		quintokaueh();
-		setimokaueh();
-		setVisible(true);
-
-	}
-	
 	private void componentesCriar() {
-		
+
 		pnl1 = new JPanel();
 		pnl1.setLayout(null);
 		pnl1.setBounds(10, 10, 330, 200);
 		pnl1.setBorder(BorderFactory.createTitledBorder("Aplicar Desconto"));
-		
+
 			lblValorA = new JLabel("Valor Inicial R$(a):");
 			lblValorA.setForeground(Color.red);
 		    lblValorA.setBounds(10, 20, 200, 35);
 			pnl1.add(lblValorA);
-			
-			
+
+
 			txfValorA = new JTextField();
 			txfValorA.setBounds(117, 20, 200, 35);
+			addNumericFilter(txfValorA);
 			txfValorA.addKeyListener(new KeyListener() {
-				
+
 				@Override
 				public void keyTyped(KeyEvent e) {
-					
+
 				}
-				
+
 				@Override
 				public void keyReleased(KeyEvent e) {
-					
+
 				}
-				
+
 				@Override
 				public void keyPressed(KeyEvent e) {
 					if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-						txfValorB.requestFocus();	
-					}				
+						txfValorB.requestFocus();
+					}
 				}
 			});
 			pnl1.add(txfValorA);
-			
+
 			lblValorB = new JLabel("Desconto:");
 			lblValorB.setForeground(Color.blue);
 		    lblValorB.setBounds(55, 60, 200, 35);
 			pnl1.add(lblValorB);
 
-			
+
 			txfValorB = new JTextField();
 			txfValorB.setBounds(117, 60, 200, 35);
+			addNumericFilter(txfValorB);
 			txfValorB.addKeyListener(new KeyAdapter() {
 				@Override
 				public void keyPressed(KeyEvent e) {
@@ -195,19 +86,19 @@ public class AtividadeWindow extends JFrame {
 				}
 			});
 			pnl1.add(txfValorB);
-			
+
 			lblValorResultado = new JLabel("Resultado:");
 			lblValorResultado.setForeground(Color.black);
 		    lblValorResultado.setBounds(55, 100, 200, 35);
 			pnl1.add(lblValorResultado);
-			
+
 			txfResultado = new JTextField();
 			txfResultado.setBounds(117, 100, 200, 35);
 			txfResultado.setEditable(false);
 			pnl1.add(txfResultado);
-			
+
 			btnResultado = new JButton(new AbstractAction("CALCULAR") {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 
@@ -218,55 +109,56 @@ public class AtividadeWindow extends JFrame {
 
 					double a = Double.parseDouble(txfValorA.getText());
 					double b = Double.parseDouble(txfValorB.getText());
-					
+
 					double resultado = calculusMatematicus.soma(a, b);
 					txfResultado.setText(""+resultado);
-					
+
 				}
 			});
 
 			btnResultado.setBounds(115, 140, 100, 35);
 			pnl1.add(btnResultado);
-		
-		getContentPane().add(pnl1);		
+
+		getContentPane().add(pnl1);
 	}
-	
+
 	private void acrecimoPercent() {
-		
+
 		pnlincrementar = new JPanel();
 		pnlincrementar.setLayout(null);
 		pnlincrementar.setBounds(345, 10, 330, 200);
 		pnlincrementar.setBorder(BorderFactory.createTitledBorder("Incrementar Percentual"));
-		
+
 			lblValorAIncrementar = new JLabel("Valor Inicial R$(a):");
 			lblValorAIncrementar.setForeground(Color.red);
 		    lblValorAIncrementar.setBounds(10, 20, 200, 35);
 			pnlincrementar.add(lblValorAIncrementar);
-			
-			
+
+
 			txfValorAIncrementar = new JTextField();
 			txfValorAIncrementar.setBounds(117, 20, 200, 35);
+			addNumericFilter(txfValorAIncrementar);
 			txfValorAIncrementar.addKeyListener(new KeyListener() {
-				
+
 				@Override
 				public void keyTyped(KeyEvent e) {
-					
+
 				}
-				
+
 				@Override
 				public void keyReleased(KeyEvent e) {
-					
+
 				}
-				
+
 				@Override
 				public void keyPressed(KeyEvent e) {
 					if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-						txfValorBIncrementar.requestFocus();	
-					}				
+						txfValorBIncrementar.requestFocus();
+					}
 				}
 			});
 			pnlincrementar.add(txfValorAIncrementar);
-			
+
 			lblValorBIncrementar = new JLabel("Incrementar %:");
 			lblValorBIncrementar.setForeground(Color.blue);
 		    lblValorBIncrementar.setBounds(27, 60, 200, 35);
@@ -274,6 +166,7 @@ public class AtividadeWindow extends JFrame {
 
 			txfValorBIncrementar = new JTextField();
 			txfValorBIncrementar.setBounds(117, 60, 200, 35);
+			addNumericFilter(txfValorBIncrementar);
 			txfValorBIncrementar.addKeyListener(new KeyAdapter() {
 				@Override
 				public void keyPressed(KeyEvent e) {
@@ -283,20 +176,20 @@ public class AtividadeWindow extends JFrame {
 				}
 			});
 			pnlincrementar.add(txfValorBIncrementar);
-			
+
 			lblValorResultadoIncrementar = new JLabel("Resultado:");
 			lblValorResultadoIncrementar.setForeground(Color.black);
 		    lblValorResultadoIncrementar.setBounds(55, 100, 200, 35);
 			pnlincrementar.add(lblValorResultadoIncrementar);
 
-			
+
 			txfResultadoIncrementar = new JTextField();
 			txfResultadoIncrementar.setBounds(117, 100, 200, 35);
 			txfResultadoIncrementar.setEditable(false);
 			pnlincrementar.add(txfResultadoIncrementar);
-			
+
 			btnResultadoIncrementar = new JButton(new AbstractAction("CALCULAR") {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 
@@ -307,61 +200,62 @@ public class AtividadeWindow extends JFrame {
 
 					double a = Double.parseDouble(txfValorAIncrementar.getText());
 					double b = Double.parseDouble(txfValorBIncrementar.getText());
-					
+
 					double resultado = calculusMatematicus.acrementar(a, b);
 					txfResultadoIncrementar.setText(""+resultado);
-					
+
 				}
 			});
-			
+
 		    JLabel lblValorResultIncrementar = new JLabel("Resultado:");
 		    lblValorResultIncrementar.setBounds(10, 90, 200, 35);
 		    getContentPane().add(lblValorResultIncrementar);
 
 			btnResultadoIncrementar.setBounds(115, 140, 100, 35);
 			pnlincrementar.add(btnResultadoIncrementar);
-		
-		getContentPane().add(pnlincrementar);		
+
+		getContentPane().add(pnlincrementar);
 	}
-	
+
 	//MEU TERCEIRO PEDRO
-	
+
 	private void terceiroPedro() {
-		
+
 		pnl3 = new JPanel();
 		pnl3.setLayout(null);
 		pnl3.setBounds(680, 10, 330, 200);
 		pnl3.setBorder(BorderFactory.createTitledBorder("Amostragem - Quanto X% Representa de Y"));
-		
+
 			lblValorA3 = new JLabel("Total(a):");
 			lblValorA3.setForeground(Color.red);
 		    lblValorA3.setBounds(70, 20, 200, 35);
 			pnl3.add(lblValorA3);
-			
-			
+
+
 			txfValorA3 = new JTextField();
 			txfValorA3.setBounds(117, 20, 200, 35);
+			addNumericFilter(txfValorA3);
 			txfValorA3.addKeyListener(new KeyListener() {
-				
+
 				@Override
 				public void keyTyped(KeyEvent e) {
-					
+
 				}
-				
+
 				@Override
 				public void keyReleased(KeyEvent e) {
-					
+
 				}
-				
+
 				@Override
 				public void keyPressed(KeyEvent e) {
 					if (e.getKeyCode() == KeyEvent.VK_ENTER) {
-						txfValorB3.requestFocus();	
-					}				
+						txfValorB3.requestFocus();
+					}
 				}
 			});
 			pnl3.add(txfValorA3);
-			
+
 			lblValorB3 = new JLabel("Porcentagem %:");
 			lblValorB3.setForeground(Color.blue);
 		    lblValorB3.setBounds(25, 60, 200, 35);
@@ -369,6 +263,7 @@ public class AtividadeWindow extends JFrame {
 
 			txfValorB3 = new JTextField();
 			txfValorB3.setBounds(117, 60, 200, 35);
+			addNumericFilter(txfValorB3);
 			txfValorB3.addKeyListener(new KeyAdapter() {
 				@Override
 				public void keyPressed(KeyEvent e) {
@@ -378,20 +273,20 @@ public class AtividadeWindow extends JFrame {
 				}
 			});
 			pnl3.add(txfValorB3);
-			
+
 			lblValorResultado3 = new JLabel("Corresponde a:");
 			lblValorResultado3.setForeground(Color.black);
 			lblValorResultado3.setBounds(30, 100, 200, 35);
 			pnl3.add(lblValorResultado3);
 
-			
+
 			txfResultado3 = new JTextField();
 			txfResultado3.setBounds(117, 100, 200, 35);
 			txfResultado3.setEditable(false);
 			pnl3.add(txfResultado3);
-			
+
 			btnResultado3 = new JButton(new AbstractAction("CALCULAR") {
-				
+
 				@Override
 				public void actionPerformed(ActionEvent e) {
 
@@ -402,21 +297,21 @@ public class AtividadeWindow extends JFrame {
 
 					double a = Double.parseDouble(txfValorA3.getText());
 					double b = Double.parseDouble(txfValorB3.getText());
-					
+
 					double resultado = calculusMatematicus.amostragem(a, b);
 					txfResultado3.setText(""+resultado);
-					
+
 				}
 			});
-			
+
 		    JLabel lblValorResultado3 = new JLabel("Resultado:");
 		    lblValorResultado3.setBounds(10, 90, 200, 35);
 		    getContentPane().add(lblValorResultado3);
 
 		    btnResultado3.setBounds(115, 140, 100, 35);
 			pnl3.add(btnResultado3);
-		
-		getContentPane().add(pnl3);		
+
+		getContentPane().add(pnl3);
 	}
 	private void primeirokaueh() {
 
@@ -433,6 +328,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfValorA4 = new JTextField();
 		txfValorA4.setBounds(117, 20, 200, 35);
+		addNumericFilter(txfValorA4);
 		txfValorA4.addKeyListener(new KeyListener() {
 
 			@Override
@@ -461,6 +357,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfValorB4 = new JTextField();
 		txfValorB4.setBounds(117, 60, 200, 35);
+		addNumericFilter(txfValorB4);
 		txfValorB4.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -510,7 +407,7 @@ public class AtividadeWindow extends JFrame {
 
 		getContentPane().add(pnl4);
 	}
-	
+
 	// seggundo kaueh
 	private void segundokaueh() {
 
@@ -527,6 +424,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfValorA5 = new JTextField();
 		txfValorA5.setBounds(117, 20, 200, 35);
+		addNumericFilter(txfValorA5);
 		txfValorA5.addKeyListener(new KeyListener() {
 
 			@Override
@@ -555,6 +453,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfValorB5 = new JTextField();
 		txfValorB5.setBounds(117, 60, 200, 35);
+		addNumericFilter(txfValorB5);
 		txfValorB5.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -622,6 +521,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfValorA6 = new JTextField();
 		txfValorA6.setBounds(117, 20, 200, 35);
+		addNumericFilter(txfValorA6);
 		txfValorA6.addKeyListener(new KeyListener() {
 
 			@Override
@@ -650,6 +550,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfValorB6 = new JTextField();
 		txfValorB6.setBounds(117, 60, 200, 35);
+		addNumericFilter(txfValorB6);
 		txfValorB6.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -717,6 +618,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfValorA7 = new JTextField();
 		txfValorA7.setBounds(117, 20, 200, 35);
+		addNumericFilter(txfValorA7);
 		txfValorA7.addKeyListener(new KeyListener() {
 
 			@Override
@@ -745,6 +647,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfValorB7 = new JTextField();
 		txfValorB7.setBounds(117, 60, 200, 35);
+		addNumericFilter(txfValorB7);
 		txfValorB7.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -793,7 +696,8 @@ public class AtividadeWindow extends JFrame {
 		pnl7.add(btnResultado7);
 
 		getContentPane().add(pnl7);
-	}
+
+		}
 
 	//quintokaueh
 
@@ -812,6 +716,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfValorA8 = new JTextField();
 		txfValorA8.setBounds(20, 20, 135, 35);
+		addNumericFilter(txfValorA8);
 		txfValorA8.addKeyListener(new KeyListener() {
 
 			@Override
@@ -840,6 +745,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfValorB8 = new JTextField();
 		txfValorB8.setBounds(20, 60, 135, 35);
+		addNumericFilter(txfValorB8);
 		txfValorB8.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -862,6 +768,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfValorR1= new JTextField();
 		txfValorR1.setBounds(185, 20, 135, 35);
+		addNumericFilter(txfValorR1);
 		pnl8.add(txfValorR1);
 		txfValorR1.addKeyListener(new KeyListener() {
 
@@ -886,6 +793,7 @@ public class AtividadeWindow extends JFrame {
 
 		txfResultado8 = new JTextField();
 		txfResultado8.setBounds(185, 60, 135, 35);
+		addNumericFilter(txfResultado8);
 		txfResultado8.setEditable(false);
 		pnl8.add(txfResultado8);
 
@@ -974,7 +882,7 @@ public class AtividadeWindow extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 
-				if ( cbMa.isSelected()==false && cbMi.isSelected()==false && cbNu.isSelected()==false && cbSim.isSelected()==false) {
+				if ( !cbMa.isSelected() && !cbMi.isSelected() && !cbNu.isSelected() && !cbSim.isSelected()) {
 					JOptionPane.showMessageDialog(null, "Por favor, Ecolha pelo menos uma das opções", "Erro", JOptionPane.ERROR_MESSAGE);
 					return;
 				}
@@ -1002,9 +910,35 @@ public class AtividadeWindow extends JFrame {
 
 		txfResultado9 = new JTextField();
 		txfResultado9.setBounds(15, 150, 280, 30);
+		txfResultado9.setEditable(false);
 		pnl9.add(txfResultado9);
 
 		getContentPane().add(pnl9);
+	}
+
+	private void addNumericFilter(JTextField textField) {
+		((AbstractDocument) textField.getDocument()).setDocumentFilter(new NumericFilter());
+	}
+
+	static class NumericFilter extends DocumentFilter {
+		@Override
+		public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
+			if (string != null && string.matches("[0-9,.]*")) { // Aceita apenas números
+				super.insertString(fb, offset, string, attr);
+			}
+		}
+
+		@Override
+		public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
+			if (text != null && text.matches("[0-9,.]*")) { // Aceita apenas números
+				super.replace(fb, offset, length, text, attrs);
+			}
+		}
+
+		@Override
+		public void remove(FilterBypass fb, int offset, int length) throws BadLocationException {
+			super.remove(fb, offset, length);
+		}
 	}
 
 	public static void main(String[] args) {
