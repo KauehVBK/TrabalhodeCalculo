@@ -179,7 +179,7 @@ public class AtividadeWindow extends JFrame {
 			pnl1.add(txfValorA);
 			
 			lblValorB = new JLabel("Desconto:");
-			lblValorB.setForeground(Color.black);
+			lblValorB.setForeground(Color.blue);
 		    lblValorB.setBounds(55, 60, 200, 35);
 			pnl1.add(lblValorB);
 
@@ -210,7 +210,12 @@ public class AtividadeWindow extends JFrame {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					
+
+					if (txfValorA.getText().isEmpty() || txfValorB.getText().isEmpty()) {
+						JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+
 					double a = Double.parseDouble(txfValorA.getText());
 					double b = Double.parseDouble(txfValorB.getText());
 					
@@ -263,7 +268,7 @@ public class AtividadeWindow extends JFrame {
 			pnlincrementar.add(txfValorAIncrementar);
 			
 			lblValorBIncrementar = new JLabel("Incrementar %:");
-			lblValorBIncrementar.setForeground(Color.black);
+			lblValorBIncrementar.setForeground(Color.blue);
 		    lblValorBIncrementar.setBounds(27, 60, 200, 35);
 			pnlincrementar.add(lblValorBIncrementar);
 
@@ -294,7 +299,12 @@ public class AtividadeWindow extends JFrame {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					
+
+					if (txfValorAIncrementar.getText().isEmpty() || txfValorBIncrementar.getText().isEmpty()) {
+						JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+
 					double a = Double.parseDouble(txfValorAIncrementar.getText());
 					double b = Double.parseDouble(txfValorBIncrementar.getText());
 					
@@ -353,7 +363,7 @@ public class AtividadeWindow extends JFrame {
 			pnl3.add(txfValorA3);
 			
 			lblValorB3 = new JLabel("Porcentagem %:");
-			lblValorB3.setForeground(Color.black);
+			lblValorB3.setForeground(Color.blue);
 		    lblValorB3.setBounds(25, 60, 200, 35);
 			pnl3.add(lblValorB3);
 
@@ -384,7 +394,12 @@ public class AtividadeWindow extends JFrame {
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					
+
+					if (txfValorA3.getText().isEmpty() || txfValorB3.getText().isEmpty()) {
+						JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+						return;
+					}
+
 					double a = Double.parseDouble(txfValorA3.getText());
 					double b = Double.parseDouble(txfValorB3.getText());
 					
@@ -410,7 +425,7 @@ public class AtividadeWindow extends JFrame {
 		pnl4.setBounds(1015, 10, 330, 200);
 		pnl4.setBorder(BorderFactory.createTitledBorder("Amostragem 2 - Quanto X representa de Y"));
 
-		lblValorA4 = new JLabel("Total[X]:");
+		lblValorA4 = new JLabel("Total[a]:");
 		lblValorA4.setForeground(Color.red);
 		lblValorA4.setBounds(65, 20, 200, 35);
 		pnl4.add(lblValorA4);
@@ -439,8 +454,8 @@ public class AtividadeWindow extends JFrame {
 		});
 		pnl4.add(txfValorA4);
 
-		lblValorB4 = new JLabel("Parte[Y]:");
-		lblValorB4.setForeground(Color.black);
+		lblValorB4 = new JLabel("Parte[b]:");
+		lblValorB4.setForeground(Color.blue);
 		lblValorB4.setBounds(65, 60, 200, 35);
 		pnl4.add(lblValorB4);
 
@@ -471,6 +486,11 @@ public class AtividadeWindow extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
+				if (txfValorA4.getText().isEmpty() || txfValorB4.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 
 				double a = Double.parseDouble(txfValorA4.getText());
 				double b = Double.parseDouble(txfValorB4.getText());
@@ -528,8 +548,8 @@ public class AtividadeWindow extends JFrame {
 		});
 		pnl5.add(txfValorA5);
 
-		lblValorB5 = new JLabel("Valor c/desconto[Y]:");
-		lblValorB5.setForeground(Color.black);
+		lblValorB5 = new JLabel("Valor c/desconto[b]:");
+		lblValorB5.setForeground(Color.blue);
 		lblValorB5.setBounds(2, 60, 200, 35);
 		pnl5.add(lblValorB5);
 
@@ -560,6 +580,11 @@ public class AtividadeWindow extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
+				if (txfValorA5.getText().isEmpty() || txfValorB5.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 
 				double a = Double.parseDouble(txfValorA5.getText());
 				double b = Double.parseDouble(txfValorB5.getText());
@@ -618,8 +643,8 @@ public class AtividadeWindow extends JFrame {
 		});
 		pnl6.add(txfValorA6);
 
-		lblValorB6 = new JLabel("Valor final[Y]:");
-		lblValorB6.setForeground(Color.black);
+		lblValorB6 = new JLabel("Valor final[b]:");
+		lblValorB6.setForeground(Color.blue);
 		lblValorB6.setBounds(40, 60, 200, 35);
 		pnl6.add(lblValorB6);
 
@@ -650,6 +675,11 @@ public class AtividadeWindow extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
+				if (txfValorA6.getText().isEmpty() || txfValorB6.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 
 				double a = Double.parseDouble(txfValorA6.getText());
 				double b = Double.parseDouble(txfValorB6.getText());
@@ -708,8 +738,8 @@ public class AtividadeWindow extends JFrame {
 		});
 		pnl7.add(txfValorA7);
 
-		lblValorB7 = new JLabel("% Desconto[Y]:");
-		lblValorB7.setForeground(Color.black);
+		lblValorB7 = new JLabel("% Desconto[b]:");
+		lblValorB7.setForeground(Color.blue);
 		lblValorB7.setBounds(30, 60, 200, 35);
 		pnl7.add(lblValorB7);
 
@@ -740,6 +770,11 @@ public class AtividadeWindow extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
+				if (txfValorA7.getText().isEmpty() || txfValorB7.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 
 				double a = Double.parseDouble(txfValorA7.getText());
 				double b = Double.parseDouble(txfValorB7.getText());
@@ -799,7 +834,7 @@ public class AtividadeWindow extends JFrame {
 		pnl8.add(txfValorA8);
 
 		lblValorB8 = new JLabel("B:");
-		lblValorB8.setForeground(Color.black);
+		lblValorB8.setForeground(Color.blue);
 		lblValorB8.setBounds(5, 60, 200, 35);
 		pnl8.add(lblValorB8);
 
@@ -858,6 +893,11 @@ public class AtividadeWindow extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
+				if (txfValorA8.getText().isEmpty() || txfValorB8.getText().isEmpty()|| txfValorR1.getText().isEmpty()) {
+					JOptionPane.showMessageDialog(null, "Por favor, preencha todos os campos!", "Erro", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 
 				double a = Double.parseDouble(txfValorA8.getText());
 				double b = Double.parseDouble(txfValorB8.getText());
@@ -923,7 +963,8 @@ public class AtividadeWindow extends JFrame {
 		lblTamanho9.setBounds(15, 95, 200, 35);
 		pnl9.add(lblTamanho9);
 
-		spiTamanhi = new JSpinner();
+		SpinnerNumberModel model = new SpinnerNumberModel(1, 1, 100, 1);
+		spiTamanhi = new JSpinner(model);
 		spiTamanhi.setBounds(75, 100, 80, 25);
 		pnl9.add(spiTamanhi);
 
@@ -932,6 +973,11 @@ public class AtividadeWindow extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+
+				if ( cbMa.isSelected()==false && cbMi.isSelected()==false && cbNu.isSelected()==false && cbSim.isSelected()==false) {
+					JOptionPane.showMessageDialog(null, "Por favor, Ecolha pelo menos uma das opções", "Erro", JOptionPane.ERROR_MESSAGE);
+					return;
+				}
 
 				int a = (Integer) spiTamanhi.getValue();
 
