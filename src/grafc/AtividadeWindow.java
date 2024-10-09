@@ -13,6 +13,8 @@ import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DocumentFilter;
 
+import static java.lang.reflect.Array.getLength;
+
 public class AtividadeWindow extends JanelaBase {
 
 		public AtividadeWindow() {
@@ -44,7 +46,7 @@ public class AtividadeWindow extends JanelaBase {
 			pnl1.add(lblValorA);
 
 
-			txfValorA = new JTextField();
+			txfValorA = new JTextField(limit);
 			txfValorA.setBounds(117, 20, 200, 35);
 			addNumericFilter(txfValorA);
 			txfValorA.addKeyListener(new KeyListener() {
@@ -74,7 +76,7 @@ public class AtividadeWindow extends JanelaBase {
 			pnl1.add(lblValorB);
 
 
-			txfValorB = new JTextField();
+			txfValorB = new JTextField(limit);
 			txfValorB.setBounds(117, 60, 200, 35);
 			addNumericFilter(txfValorB);
 			txfValorB.addKeyListener(new KeyAdapter() {
@@ -135,7 +137,7 @@ public class AtividadeWindow extends JanelaBase {
 			pnlincrementar.add(lblValorAIncrementar);
 
 
-			txfValorAIncrementar = new JTextField();
+			txfValorAIncrementar = new JTextField(limit);
 			txfValorAIncrementar.setBounds(117, 20, 200, 35);
 			addNumericFilter(txfValorAIncrementar);
 			txfValorAIncrementar.addKeyListener(new KeyListener() {
@@ -164,7 +166,7 @@ public class AtividadeWindow extends JanelaBase {
 		    lblValorBIncrementar.setBounds(27, 60, 200, 35);
 			pnlincrementar.add(lblValorBIncrementar);
 
-			txfValorBIncrementar = new JTextField();
+			txfValorBIncrementar = new JTextField(limit);
 			txfValorBIncrementar.setBounds(117, 60, 200, 35);
 			addNumericFilter(txfValorBIncrementar);
 			txfValorBIncrementar.addKeyListener(new KeyAdapter() {
@@ -232,7 +234,7 @@ public class AtividadeWindow extends JanelaBase {
 			pnl3.add(lblValorA3);
 
 
-			txfValorA3 = new JTextField();
+			txfValorA3 = new JTextField(limit);
 			txfValorA3.setBounds(117, 20, 200, 35);
 			addNumericFilter(txfValorA3);
 			txfValorA3.addKeyListener(new KeyListener() {
@@ -261,7 +263,7 @@ public class AtividadeWindow extends JanelaBase {
 		    lblValorB3.setBounds(25, 60, 200, 35);
 			pnl3.add(lblValorB3);
 
-			txfValorB3 = new JTextField();
+			txfValorB3 = new JTextField(limit);
 			txfValorB3.setBounds(117, 60, 200, 35);
 			addNumericFilter(txfValorB3);
 			txfValorB3.addKeyListener(new KeyAdapter() {
@@ -326,7 +328,7 @@ public class AtividadeWindow extends JanelaBase {
 		pnl4.add(lblValorA4);
 
 
-		txfValorA4 = new JTextField();
+		txfValorA4 = new JTextField(limit);
 		txfValorA4.setBounds(117, 20, 200, 35);
 		addNumericFilter(txfValorA4);
 		txfValorA4.addKeyListener(new KeyListener() {
@@ -355,7 +357,7 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorB4.setBounds(65, 60, 200, 35);
 		pnl4.add(lblValorB4);
 
-		txfValorB4 = new JTextField();
+		txfValorB4 = new JTextField(limit);
 		txfValorB4.setBounds(117, 60, 200, 35);
 		addNumericFilter(txfValorB4);
 		txfValorB4.addKeyListener(new KeyAdapter() {
@@ -422,7 +424,7 @@ public class AtividadeWindow extends JanelaBase {
 		pnl5.add(lblValorA5);
 
 
-		txfValorA5 = new JTextField();
+		txfValorA5 = new JTextField(limit);
 		txfValorA5.setBounds(117, 20, 200, 35);
 		addNumericFilter(txfValorA5);
 		txfValorA5.addKeyListener(new KeyListener() {
@@ -451,7 +453,7 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorB5.setBounds(2, 60, 200, 35);
 		pnl5.add(lblValorB5);
 
-		txfValorB5 = new JTextField();
+		txfValorB5 = new JTextField(limit);
 		txfValorB5.setBounds(117, 60, 200, 35);
 		addNumericFilter(txfValorB5);
 		txfValorB5.addKeyListener(new KeyAdapter() {
@@ -519,7 +521,7 @@ public class AtividadeWindow extends JanelaBase {
 		pnl6.add(lblValorA6);
 
 
-		txfValorA6 = new JTextField();
+		txfValorA6 = new JTextField(limit);
 		txfValorA6.setBounds(117, 20, 200, 35);
 		addNumericFilter(txfValorA6);
 		txfValorA6.addKeyListener(new KeyListener() {
@@ -548,7 +550,7 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorB6.setBounds(40, 60, 200, 35);
 		pnl6.add(lblValorB6);
 
-		txfValorB6 = new JTextField();
+		txfValorB6 = new JTextField(limit);
 		txfValorB6.setBounds(117, 60, 200, 35);
 		addNumericFilter(txfValorB6);
 		txfValorB6.addKeyListener(new KeyAdapter() {
@@ -616,7 +618,7 @@ public class AtividadeWindow extends JanelaBase {
 		pnl7.add(lblValorA7);
 
 
-		txfValorA7 = new JTextField();
+		txfValorA7 = new JTextField(limit);
 		txfValorA7.setBounds(117, 20, 200, 35);
 		addNumericFilter(txfValorA7);
 		txfValorA7.addKeyListener(new KeyListener() {
@@ -645,7 +647,7 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorB7.setBounds(30, 60, 200, 35);
 		pnl7.add(lblValorB7);
 
-		txfValorB7 = new JTextField();
+		txfValorB7 = new JTextField(limit);
 		txfValorB7.setBounds(117, 60, 200, 35);
 		addNumericFilter(txfValorB7);
 		txfValorB7.addKeyListener(new KeyAdapter() {
@@ -714,7 +716,7 @@ public class AtividadeWindow extends JanelaBase {
 		pnl8.add(lblValorA8);
 
 
-		txfValorA8 = new JTextField();
+		txfValorA8 = new JTextField(limit);
 		txfValorA8.setBounds(20, 20, 135, 35);
 		addNumericFilter(txfValorA8);
 		txfValorA8.addKeyListener(new KeyListener() {
@@ -743,7 +745,7 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorB8.setBounds(5, 60, 200, 35);
 		pnl8.add(lblValorB8);
 
-		txfValorB8 = new JTextField();
+		txfValorB8 = new JTextField(limit);
 		txfValorB8.setBounds(20, 60, 135, 35);
 		addNumericFilter(txfValorB8);
 		txfValorB8.addKeyListener(new KeyAdapter() {
@@ -766,7 +768,7 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorR1.setBounds(165, 20, 135, 35);
 		pnl8.add(lblValorR1);
 
-		txfValorR1= new JTextField();
+		txfValorR1= new JTextField(limit);
 		txfValorR1.setBounds(185, 20, 135, 35);
 		addNumericFilter(txfValorR1);
 		pnl8.add(txfValorR1);
@@ -871,7 +873,7 @@ public class AtividadeWindow extends JanelaBase {
 		lblTamanho9.setBounds(15, 95, 200, 35);
 		pnl9.add(lblTamanho9);
 
-		SpinnerNumberModel model = new SpinnerNumberModel(1, 1, 100, 1);
+		SpinnerNumberModel model = new SpinnerNumberModel(1, 1, 12, 1);
 		spiTamanhi = new JSpinner(model);
 		spiTamanhi.setBounds(75, 100, 80, 25);
 		pnl9.add(spiTamanhi);
@@ -921,17 +923,23 @@ public class AtividadeWindow extends JanelaBase {
 	}
 
 	static class NumericFilter extends DocumentFilter {
+
 		@Override
 		public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
-			if (string != null && string.matches("[0-9,.]*")) { // Aceita apenas números
-				super.insertString(fb, offset, string, attr);
+
+			if (string != null && string.matches("[0-9,.]*" )) {
+				if ((fb.getDocument().getLength() + string.length()) <= limit) {
+					super.insertString(fb, offset, string, attr);
+				}
 			}
 		}
 
 		@Override
 		public void replace(FilterBypass fb, int offset, int length, String text, AttributeSet attrs) throws BadLocationException {
-			if (text != null && text.matches("[0-9,.]*")) { // Aceita apenas números
-				super.replace(fb, offset, length, text, attrs);
+			if (text != null && text.matches("[0-9,.]*")) {
+				if ((fb.getDocument().getLength() - length + text.length()) <= limit) {
+					super.replace(fb, offset, length, text, attrs);
+				}
 			}
 		}
 

@@ -19,6 +19,8 @@ public class JanelaBase extends JFrame {
         return painel;
     }
 
+    protected static int limit = 6;
+
     // DESCONTO
     protected JPanel pnl1;
     protected JLabel lblValorA;
