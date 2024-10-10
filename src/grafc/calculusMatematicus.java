@@ -1,6 +1,7 @@
 package grafc;
 
 import javax.swing.*;
+import java.math.BigDecimal;
 import java.util.Random;
 
 public class calculusMatematicus {
@@ -54,8 +55,11 @@ public class calculusMatematicus {
 		return ((a*100)/(100-b));
 	}
 	public static double regrade3(double a, double b,double r1) {
-		if (a == 0 && b== 0 && b== r1) return 0;
-		return (r1*b)/a;
+		if (a == 0 || b == 0) {
+
+			return 0;
+	}
+		return (b*r1) / a;
 	}
 	public static String gerarsenha(int a, boolean maiu, boolean minu, boolean simb, boolean nume) {
 

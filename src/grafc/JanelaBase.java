@@ -18,8 +18,8 @@ public class JanelaBase extends JFrame {
         painel.setBorder(BorderFactory.createTitledBorder(titulo));
         return painel;
     }
+    //limite de characters
 
-    protected static int limit = 6;
 
     // DESCONTO
     protected JPanel pnl1;

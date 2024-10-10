@@ -46,9 +46,9 @@ public class AtividadeWindow extends JanelaBase {
 			pnl1.add(lblValorA);
 
 
-			txfValorA = new JTextField(limit);
+			txfValorA = new JTextField();
 			txfValorA.setBounds(117, 20, 200, 35);
-			addNumericFilter(txfValorA);
+			addNumericFilter(txfValorA,6);
 			txfValorA.addKeyListener(new KeyListener() {
 
 				@Override
@@ -76,9 +76,9 @@ public class AtividadeWindow extends JanelaBase {
 			pnl1.add(lblValorB);
 
 
-			txfValorB = new JTextField(limit);
+			txfValorB = new JTextField();
 			txfValorB.setBounds(117, 60, 200, 35);
-			addNumericFilter(txfValorB);
+			addNumericFilter(txfValorB,6);
 			txfValorB.addKeyListener(new KeyAdapter() {
 				@Override
 				public void keyPressed(KeyEvent e) {
@@ -137,9 +137,9 @@ public class AtividadeWindow extends JanelaBase {
 			pnlincrementar.add(lblValorAIncrementar);
 
 
-			txfValorAIncrementar = new JTextField(limit);
+			txfValorAIncrementar = new JTextField();
 			txfValorAIncrementar.setBounds(117, 20, 200, 35);
-			addNumericFilter(txfValorAIncrementar);
+			addNumericFilter(txfValorAIncrementar,6);
 			txfValorAIncrementar.addKeyListener(new KeyListener() {
 
 				@Override
@@ -166,9 +166,9 @@ public class AtividadeWindow extends JanelaBase {
 		    lblValorBIncrementar.setBounds(27, 60, 200, 35);
 			pnlincrementar.add(lblValorBIncrementar);
 
-			txfValorBIncrementar = new JTextField(limit);
+			txfValorBIncrementar = new JTextField();
 			txfValorBIncrementar.setBounds(117, 60, 200, 35);
-			addNumericFilter(txfValorBIncrementar);
+			addNumericFilter(txfValorBIncrementar,6);
 			txfValorBIncrementar.addKeyListener(new KeyAdapter() {
 				@Override
 				public void keyPressed(KeyEvent e) {
@@ -234,9 +234,9 @@ public class AtividadeWindow extends JanelaBase {
 			pnl3.add(lblValorA3);
 
 
-			txfValorA3 = new JTextField(limit);
+			txfValorA3 = new JTextField();
 			txfValorA3.setBounds(117, 20, 200, 35);
-			addNumericFilter(txfValorA3);
+			addNumericFilter(txfValorA3,6);
 			txfValorA3.addKeyListener(new KeyListener() {
 
 				@Override
@@ -263,9 +263,9 @@ public class AtividadeWindow extends JanelaBase {
 		    lblValorB3.setBounds(25, 60, 200, 35);
 			pnl3.add(lblValorB3);
 
-			txfValorB3 = new JTextField(limit);
+			txfValorB3 = new JTextField();
 			txfValorB3.setBounds(117, 60, 200, 35);
-			addNumericFilter(txfValorB3);
+			addNumericFilter(txfValorB3,6);
 			txfValorB3.addKeyListener(new KeyAdapter() {
 				@Override
 				public void keyPressed(KeyEvent e) {
@@ -328,9 +328,9 @@ public class AtividadeWindow extends JanelaBase {
 		pnl4.add(lblValorA4);
 
 
-		txfValorA4 = new JTextField(limit);
+		txfValorA4 = new JTextField();
 		txfValorA4.setBounds(117, 20, 200, 35);
-		addNumericFilter(txfValorA4);
+		addNumericFilter(txfValorA4,6);
 		txfValorA4.addKeyListener(new KeyListener() {
 
 			@Override
@@ -357,9 +357,9 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorB4.setBounds(65, 60, 200, 35);
 		pnl4.add(lblValorB4);
 
-		txfValorB4 = new JTextField(limit);
+		txfValorB4 = new JTextField();
 		txfValorB4.setBounds(117, 60, 200, 35);
-		addNumericFilter(txfValorB4);
+		addNumericFilter(txfValorB4,6);
 		txfValorB4.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -424,9 +424,9 @@ public class AtividadeWindow extends JanelaBase {
 		pnl5.add(lblValorA5);
 
 
-		txfValorA5 = new JTextField(limit);
+		txfValorA5 = new JTextField();
 		txfValorA5.setBounds(117, 20, 200, 35);
-		addNumericFilter(txfValorA5);
+		addNumericFilter(txfValorA5,6);
 		txfValorA5.addKeyListener(new KeyListener() {
 
 			@Override
@@ -453,9 +453,9 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorB5.setBounds(2, 60, 200, 35);
 		pnl5.add(lblValorB5);
 
-		txfValorB5 = new JTextField(limit);
+		txfValorB5 = new JTextField();
 		txfValorB5.setBounds(117, 60, 200, 35);
-		addNumericFilter(txfValorB5);
+		addNumericFilter(txfValorB5,6);
 		txfValorB5.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -521,9 +521,9 @@ public class AtividadeWindow extends JanelaBase {
 		pnl6.add(lblValorA6);
 
 
-		txfValorA6 = new JTextField(limit);
+		txfValorA6 = new JTextField();
 		txfValorA6.setBounds(117, 20, 200, 35);
-		addNumericFilter(txfValorA6);
+		addNumericFilter(txfValorA6,6);
 		txfValorA6.addKeyListener(new KeyListener() {
 
 			@Override
@@ -550,9 +550,9 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorB6.setBounds(40, 60, 200, 35);
 		pnl6.add(lblValorB6);
 
-		txfValorB6 = new JTextField(limit);
+		txfValorB6 = new JTextField();
 		txfValorB6.setBounds(117, 60, 200, 35);
-		addNumericFilter(txfValorB6);
+		addNumericFilter(txfValorB6,6);
 		txfValorB6.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -618,9 +618,9 @@ public class AtividadeWindow extends JanelaBase {
 		pnl7.add(lblValorA7);
 
 
-		txfValorA7 = new JTextField(limit);
+		txfValorA7 = new JTextField();
 		txfValorA7.setBounds(117, 20, 200, 35);
-		addNumericFilter(txfValorA7);
+		addNumericFilter(txfValorA7,6);
 		txfValorA7.addKeyListener(new KeyListener() {
 
 			@Override
@@ -647,9 +647,9 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorB7.setBounds(30, 60, 200, 35);
 		pnl7.add(lblValorB7);
 
-		txfValorB7 = new JTextField(limit);
+		txfValorB7 = new JTextField();
 		txfValorB7.setBounds(117, 60, 200, 35);
-		addNumericFilter(txfValorB7);
+		addNumericFilter(txfValorB7,6);
 		txfValorB7.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -716,9 +716,9 @@ public class AtividadeWindow extends JanelaBase {
 		pnl8.add(lblValorA8);
 
 
-		txfValorA8 = new JTextField(limit);
+		txfValorA8 = new JTextField();
 		txfValorA8.setBounds(20, 20, 135, 35);
-		addNumericFilter(txfValorA8);
+		addNumericFilter(txfValorA8,5);
 		txfValorA8.addKeyListener(new KeyListener() {
 
 			@Override
@@ -745,9 +745,9 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorB8.setBounds(5, 60, 200, 35);
 		pnl8.add(lblValorB8);
 
-		txfValorB8 = new JTextField(limit);
+		txfValorB8 = new JTextField();
 		txfValorB8.setBounds(20, 60, 135, 35);
-		addNumericFilter(txfValorB8);
+		addNumericFilter(txfValorB8,5);
 		txfValorB8.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent e) {
@@ -768,9 +768,9 @@ public class AtividadeWindow extends JanelaBase {
 		lblValorR1.setBounds(165, 20, 135, 35);
 		pnl8.add(lblValorR1);
 
-		txfValorR1= new JTextField(limit);
+		txfValorR1= new JTextField();
 		txfValorR1.setBounds(185, 20, 135, 35);
-		addNumericFilter(txfValorR1);
+		addNumericFilter(txfValorR1,5);
 		pnl8.add(txfValorR1);
 		txfValorR1.addKeyListener(new KeyListener() {
 
@@ -795,7 +795,6 @@ public class AtividadeWindow extends JanelaBase {
 
 		txfResultado8 = new JTextField();
 		txfResultado8.setBounds(185, 60, 135, 35);
-		addNumericFilter(txfResultado8);
 		txfResultado8.setEditable(false);
 		pnl8.add(txfResultado8);
 
@@ -873,7 +872,7 @@ public class AtividadeWindow extends JanelaBase {
 		lblTamanho9.setBounds(15, 95, 200, 35);
 		pnl9.add(lblTamanho9);
 
-		SpinnerNumberModel model = new SpinnerNumberModel(1, 1, 12, 1);
+		SpinnerNumberModel model = new SpinnerNumberModel(8, 8, 18, 1);
 		spiTamanhi = new JSpinner(model);
 		spiTamanhi.setBounds(75, 100, 80, 25);
 		pnl9.add(spiTamanhi);
@@ -918,12 +917,18 @@ public class AtividadeWindow extends JanelaBase {
 		getContentPane().add(pnl9);
 	}
 
-	private void addNumericFilter(JTextField textField) {
-		((AbstractDocument) textField.getDocument()).setDocumentFilter(new NumericFilter());
+	private void addNumericFilter(JTextField textField, int limit) {
+		((AbstractDocument) textField.getDocument()).setDocumentFilter(new NumericFilter(limit));
 	}
 
 	static class NumericFilter extends DocumentFilter {
 
+			private int limit;
+
+			public NumericFilter(int limit)
+			{
+			this.limit = limit;
+			}
 		@Override
 		public void insertString(FilterBypass fb, int offset, String string, AttributeSet attr) throws BadLocationException {
 
